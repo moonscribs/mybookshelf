@@ -1,4 +1,4 @@
-# mybookshelf
+# My Bookshelf
 My bookshelf is a frontend web page that I have created for all my fellow readers, showcasing books. This marks my first step in learning full-stack development. Something to note is that it's just a basic website I have made with purely frontend. I have yet to add databases and make it interactive. 
 
 # Tech stacks

@@ -1,0 +1,554 @@
+html{
+    scroll-behavior: smooth;
+}
+.section{
+    transition: all 0.5s ease;
+  opacity: 0.95;
+}
+.section:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+img {
+  transition: all 0.3s ease;
+  filter: grayscale(20%);
+}
+img:hover {
+  transform: scale(1.05) rotate(2deg);
+  filter: grayscale(0%);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+nav a {
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffb6c1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Button pulse animation */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Floating quotes */
+figure {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Background texture */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23fdf6f6" width="100" height="100"/><path fill="%23ffe6e6" d="M0 0h50v50H0z" opacity=".05"/></svg>');
+  background-size: 200px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdf6f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffb6c1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b30059;
+}
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #fdf6f6;
+    color: #4a2c2a;
+}
+
+
+header {
+    background-color: #ffe6e6; 
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #b30059;  
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+
+header figure {
+    margin: 10px 0;
+}
+
+header figcaption {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #804040;
+}
+
+
+nav {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #b30059;
+    background-color: #fff0f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #f2c2c2;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #b30059;
+    color: white;
+}
+#home {
+    background-color: #b3005a !important;
+    color:white;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#home h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#home p{
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+#home img{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 3px 16px;
+    padding: 8px 8px;
+    border-radius: 20px;
+    
+}
+#home figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#home figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+#about{
+    padding: 20px;
+    background-color: #ffe6e6; 
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#about h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#about p{
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+#about figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#about figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+#reviews{
+    padding: 20px;
+    background-color: #b3005ac4 !important;
+    color:white;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#reviews h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#reviews img{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 3px 16px;
+    padding: 8px 8px;
+    border-radius: 20px;
+
+}
+
+#reviews div {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#reviews a {
+    text-decoration: none;
+    color: #b30059;
+    background-color: #fff0f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #f2c2c2;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+#reviews a:hover {
+    background-color: #b30059;
+    color: white;
+}
+
+#reviews figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#reviews figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#rec{
+    padding: 20px;
+    background-color: #ffe6e6; 
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#rec h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+
+}
+#rec img{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 3px 16px;
+    padding: 8px 8px;
+    border-radius: 20px;
+    
+}
+#rec figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#rec figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+#trope{
+    padding: 20px;
+    background-color: #b3005ac4 !important;;
+    color:white;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#trope h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#trope p{
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+#trope dl{
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+#trope figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#trope figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+#fav{
+    padding: 20px;
+    background-color: #ffe6e6; 
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#fav h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#fav ul{
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+#fav figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#fav figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+#quotes{
+    padding: 20px;
+    background-color: #b3005ac4 !important;;
+    color:white;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#quotes h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#quotes img{
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 3px 16px;
+    padding: 8px 8px;
+    border-radius: 20px;
+    
+}
+#quotes figure{
+    margin: 10px 0;
+    padding: 2px 2px;
+}
+#quotes figcaption{
+    font-style: italic;
+    font-size: 1.2em;
+    text-align: center;
+}
+#message{
+    padding: 20px;
+    background-color: #ffe6e6; 
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid #f2c2c2;
+
+}
+#message h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#message p{
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-size: 30px;
+    text-align: center ;
+}
+#message form {
+    font-family: 'Georgia', serif;
+    text-align: center;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#message label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#message input[type="text"],
+#message input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+#message .genre-group {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#message .genre-group p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+#message .radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+#message .radio-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff0f5;
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#message .radio-row label:hover {
+    background-color: #b30059;
+    color: white;
+}
+
+#message .radio-row input[type="radio"] {
+    accent-color: #b30059;
+}
+#message textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical; 
+    margin-bottom: 20px;
+}
+
+#message button {
+    text-decoration: none;
+    color: #b30059;
+    background-color: #fff0f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #f2c2c2;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+#message button:hover {
+    background-color: #b30059;
+    color: white;
+}
+
+#Contact{
+    padding: 20px;
+    background-color: #b3005ac4 !important;;
+    color:white;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+
+}
+#Contact h2{
+    margin: 0;
+    font-size: 3em;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+#Contact li{
+    font-size: 30px;
+    font-family: 'Georgia', serif;
+}
+footer{
+    background-color: #b30059;
+    color: white;
+    font-family: 'Georgia', serif;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    
+}

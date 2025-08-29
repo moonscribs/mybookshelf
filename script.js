@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // Create a container for the spark elements
     const sparkContainer = document.createElement('div');
     sparkContainer.style.position = 'fixed';
     sparkContainer.style.top = '0';
@@ -10,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     sparkContainer.style.pointerEvents = 'none';
     sparkContainer.style.zIndex = '9999';
     document.body.appendChild(sparkContainer);
-    // Book cover tilt effect
 document.querySelectorAll('img').forEach(img => {
     img.addEventListener('mousemove', (e) => {
         const x = e.offsetX;
@@ -28,7 +25,6 @@ document.querySelectorAll('img').forEach(img => {
     });
 });
 
-// Section fade-in on scroll
 const sections = document.querySelectorAll('.section');
 
 const fadeInOnScroll = () => {
@@ -43,7 +39,6 @@ const fadeInOnScroll = () => {
     });
 };
 
-// Initialize sections as transparent
 sections.forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
@@ -53,7 +48,6 @@ sections.forEach(section => {
 window.addEventListener('scroll', fadeInOnScroll);
 window.addEventListener('load', fadeInOnScroll);
 
-    // Function to create a spark
     function createSpark(x, y) {
         const spark = document.createElement('div');
         spark.style.position = 'absolute';
@@ -61,38 +55,28 @@ window.addEventListener('load', fadeInOnScroll);
         spark.style.top = y + 'px';
         spark.style.width = '6px';
         spark.style.height = '6px';
-        spark.style.backgroundColor = 'rgba(255, 182, 193, 0.8)'; // Baby pink color
+        spark.style.backgroundColor = 'rgba(255, 182, 193, 0.8)'; 
         spark.style.borderRadius = '50%';
         spark.style.boxShadow = '0 0 8px 2px rgba(255, 182, 193, 0.8)';
         spark.style.transform = 'translate(-50%, -50%)';
         spark.style.transition = 'all 0.5s ease-out';
         
         sparkContainer.appendChild(spark);
-        
-        // Animate the spark
         setTimeout(() => {
             spark.style.opacity = '0';
             spark.style.transform = 'translate(-50%, -50%) scale(1.5)';
         }, 10);
-        
-        // Remove the spark after animation
         setTimeout(() => {
             spark.remove();
         }, 500);
     }
-
-    // Track mouse movement
     document.addEventListener('mousemove', function(e) {
-        // Create multiple sparks for a more magical effect
         for (let i = 0; i < 3; i++) {
-            // Add some randomness to the spark positions
             const offsetX = (Math.random() - 0.5) * 20;
             const offsetY = (Math.random() - 0.5) * 20;
             createSpark(e.clientX + offsetX, e.clientY + offsetY);
         }
     });
-
-    // Also create sparks when clicking (optional)
     document.addEventListener('click', function(e) {
         for (let i = 0; i < 5; i++) {
             const offsetX = (Math.random() - 0.5) * 30;
